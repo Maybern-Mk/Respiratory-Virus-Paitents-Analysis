@@ -1,154 +1,142 @@
-🫁 Respiratory Virus Hospital Admissions Analysis
+# Respiratory Virus Hospital Admissions Analysis
 
-This project analyzes hospital admission trends for major respiratory viruses—COVID-19, Influenza, and RSV—over time.
-It combines exploratory data analysis, statistical hypothesis testing, and predictive modeling to understand patterns, variability, and relationships within the data.
+## Overview  
+This project analyzes hospital admission trends for major respiratory viruses, including COVID-19, Influenza, and RSV, over time.  
 
-🎯 Objective
+It combines exploratory data analysis, statistical hypothesis testing, and predictive modeling to understand patterns, variability, and relationships within hospital admission data.
 
-Compare hospital admission patterns across respiratory viruses
+---
 
-Identify statistical differences between diseases
+## Objectives  
+- Compare hospital admission patterns across respiratory viruses  
+- Identify statistically significant differences between diseases  
+- Analyze variability and distribution of admissions  
+- Model the relationship between admission rate and new hospital admissions  
 
-Analyze variability and distribution of admissions
+---
 
-Model the relationship between admission rate and new hospital admissions
+## Dataset Description  
+- File: `Respiratory_Virus_Hospital_Admissions_Over_Time.csv`  
 
-📂 Dataset Description
+### Key Columns  
+- `week_start_date` – Weekly time reference  
+- `respiratory_virus` – Virus type (COVID-19, Influenza, RSV)  
+- `new_admissions` – Number of new hospital admissions  
+- `admission_rate_per_100k` – Admissions per 100,000 population  
 
-Respiratory_Virus_Hospital_Admissions_Over_Time.csv
+---
 
-Key columns:
+## Tools and Technologies  
+- **Python**  
+- **Pandas**, **NumPy** for data manipulation  
+- **Matplotlib**, **Seaborn** for visualization  
+- **SciPy** for statistical hypothesis testing  
+- **Scikit-learn** for regression modeling  
 
-week_start_date – Weekly time reference
+---
 
-respiratory_virus – Virus type (COVID-19, Influenza, RSV)
+## Exploratory Data Analysis  
 
-new_admissions – Number of new hospital admissions
+### Descriptive Statistics  
+- Computed mean, median, standard deviation, quartiles, and outliers  
+- Grouped statistical summaries by respiratory virus  
 
-admission_rate_per_100k – Admissions per 100,000 population
+### Key Observations  
+- Influenza shows high skewness with extreme peaks  
+- COVID-19 exhibits moderate but consistent admission levels  
+- RSV generally shows lower admission counts with fewer extreme values  
 
-🛠️ Tools & Libraries Used
+---
 
-Python
+## Visual Analysis  
+- Bar plots for admissions over time by virus  
+- Box plots to compare distribution and variability  
+- Identification of outliers and spread differences  
 
-Pandas, NumPy – data manipulation
+---
 
-Matplotlib, Seaborn – data visualization
+## Statistical Analysis  
 
-SciPy – statistical hypothesis testing
+### Hypothesis Testing  
+- Welch’s t-tests (unequal variance):  
+  - Influenza vs RSV  
+  - Influenza vs COVID-19  
+  - RSV vs COVID-19  
 
-Scikit-learn – regression modeling
+### Variance Analysis  
+- F-tests used to compare variability across viruses  
 
-🔍 Exploratory Data Analysis (EDA)
-Descriptive Statistics
+### Z-Test  
+- Evaluated population-level admission differences  
 
-Computed mean, median, standard deviation, quartiles, and outliers
+### Conclusions  
+- Significant differences exist between admission patterns of major viruses  
+- Influenza exhibits higher variance and extreme surges  
+- COVID-19 shows relatively stable admission patterns compared to Influenza  
 
-Grouped statistics by respiratory virus
+---
 
-Key Observations
+## Outlier Detection  
+- Applied Interquartile Range (IQR) method  
+- Identified unusually high admission spikes  
+- Validated findings using box plot visualizations  
 
-Influenza shows high skewness with extreme peaks
+---
 
-COVID-19 has moderate but consistent admission levels
+## Predictive Modeling  
 
-RSV generally exhibits lower admission counts with fewer extremes
+### Model  
+- Linear Regression  
 
-📊 Visual Analysis
+### Features  
+- `admission_rate_per_100k`  
 
-Bar plots: Admissions over time by virus
+### Target  
+- `new_admissions`  
 
-Box plots: Distribution and variability across viruses
+### Evaluation Metric  
+- Mean Squared Error (MSE)  
 
-Identified outliers and spread differences visually
+### Insight  
+- Admission rate per 100,000 population shows a measurable linear relationship with new hospital admissions  
 
-📈 Statistical Analysis
-Hypothesis Testing
+---
 
-Welch’s T-tests (unequal variance):
+## Project Highlights  
+- Strong application of statistical analysis techniques  
+- Multiple hypothesis tests with interpretation  
+- Clear comparison of respiratory virus behavior  
+- Integration of EDA, statistics, and machine learning  
+- Use of real-world public health dataset  
 
-Influenza vs RSV
+---
 
-Influenza vs COVID-19
-
-RSV vs COVID-19
-
-Variance Analysis
-
-F-tests used to compare variability between viruses
-
-Z-Test
-
-Tested population-level admission differences
-
-Conclusions
-
-Significant differences exist between admission patterns of major viruses
-
-Influenza shows higher variance and extreme surges compared to RSV
-
-COVID-19 admissions remain more stable relative to Influenza
-
-📉 Outlier Detection
-
-Used Interquartile Range (IQR) method
-
-Identified unusually high admission spikes
-
-Supported findings from box-plot visualizations
-
-🤖 Predictive Modeling
-Model Used
-
-Linear Regression
-
-Features
-
-admission_rate_per_100k
-
-Target
-
-new_admissions
-
-Evaluation Metric
-
-Mean Squared Error (MSE)
-
-Insight
-
-Admission rate per 100k population shows a measurable linear relationship with new hospital admissions
-
-📌 Project Highlights
-
-✔ Strong use of statistical reasoning
-✔ Multiple hypothesis tests with interpretation
-✔ Clear comparison of virus behavior
-✔ Combination of EDA + stats + ML
-✔ Real-world public health dataset
-
-🚀 How to Run
-
-Install dependencies:
-
+## How to Run 
 pip install pandas numpy matplotlib seaborn scipy scikit-learn
 
+### 2. Run the Project  
+- Update the dataset path if required  
+- Execute the notebook sequentially  
 
-Update dataset path if required
+---
 
-Run the notebook sequentially
+## Use Case  
+This analysis can support public health decision-making by identifying trends in hospital admissions, understanding disease behavior, and assisting in healthcare resource planning.
 
-🔮 Possible Extensions
+---
 
-Time-series forecasting (ARIMA / Prophet)
+## Future Enhancements  
+- Implement time-series forecasting (ARIMA or Prophet)  
+- Apply multivariate regression including virus type as a feature  
+- Perform seasonal trend decomposition  
+- Build interactive dashboards using Streamlit or Power BI  
+- Develop models for outbreak detection  
 
-Multivariate regression with virus type as a feature
+---
 
-Seasonal trend decomposition
+## Author  
+**Mrudul Paku**  
+Data Analytics | Python | Statistical Analysis | Machine Learning  
 
-Public health dashboard (Streamlit / Power BI)
 
-Logistic modeling for outbreak detection
-
-cs portfolio
-
-Just say the word 👌
+### 1. Install Dependencies  
